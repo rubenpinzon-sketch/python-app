@@ -29,11 +29,21 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/python-app:${{ env.COMMIT_ID }}
 
+    outputs:
+      commit_id: ${{ env.COMMIT_ID }}
+
   cd:
     needs: ci
     runs-on: self-hosted
     steps:
     
+      - name: Modify values file for tag image
+        shell: bash
+        run: |
+          echo ${{needs.ci.outputs.commit_id}}
+          pip install yq
+          yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app/values.yaml
+
       - name: Install ArgoCD CLI
         shell: bash
         run: |
