@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: rubenpinzon/python-app
   pullPolicy: IfNotPresent
-  tag: '934815'
+  tag: '00a6f2'
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
