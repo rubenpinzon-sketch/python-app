@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: Pyton displays the time and service.
+  annotations:
+    github.com/project-slug: rubenpinzon-sketch/python-app   
+
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
