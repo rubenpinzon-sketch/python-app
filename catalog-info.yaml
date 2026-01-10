@@ -5,7 +5,7 @@ metadata:
   description: Pyton displays the time and service.
   annotations:
     github.com/project-slug: rubenpinzon-sketch/python-app   
-
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development
